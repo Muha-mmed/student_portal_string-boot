@@ -1,0 +1,43 @@
+package com.muhd.student_app.entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
+
+@ToString
+@Data
+@Setter
+@EqualsAndHashCode
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue(strategy =GenerationType.AUTO)
+    private Long id;
+
+    @NotBlank
+    @Column(name = "matric_number")
+    private String matricNumber;
+
+    @NotBlank
+    private String department;
+
+    @NotBlank
+    private String faculty;
+
+    @NotBlank
+    @OneToOne
+    private AppUser userID;
+    
+    @NotBlank
+    @ManyToMany
+    private Course courses;
+}
