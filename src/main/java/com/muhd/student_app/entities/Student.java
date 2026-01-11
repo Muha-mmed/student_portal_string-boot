@@ -13,10 +13,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-@ToString
-@Data
 @Setter
-@EqualsAndHashCode
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor

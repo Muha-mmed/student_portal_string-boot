@@ -12,10 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import lombok.*;
 
-@ToString
-@Data
 @Setter
-@EqualsAndHashCode
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
