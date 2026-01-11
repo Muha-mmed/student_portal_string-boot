@@ -27,8 +27,10 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
-    private String code;
+    @JoinColumn(name = "course_title", nullable = false)
+    private String courseTitle;
+
+    private int code;
     private int creditUnits;
 
     @ManyToOne

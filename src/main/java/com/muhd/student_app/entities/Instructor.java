@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @ToString
 @Data
@@ -24,6 +23,10 @@ public class Instructor {
     @Id
     @GeneratedValue(strategy =GenerationType.AUTO)
     private Long id;
+
+    private String firstName;
+
+    private String lastName;
 
     private String department;
     

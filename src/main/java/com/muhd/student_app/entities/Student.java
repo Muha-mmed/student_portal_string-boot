@@ -8,7 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
@@ -27,15 +26,16 @@ public class Student {
     @GeneratedValue(strategy =GenerationType.AUTO)
     private Long id;
 
+    private String firstName;
+
+    private String lastName;
+
     @NotBlank
     @Column(name = "matric_number")
     private String matricNumber;
 
     @NotBlank
     private String department;
-
-    @NotBlank
-    private String faculty;
 
     @NotBlank
     @OneToOne
