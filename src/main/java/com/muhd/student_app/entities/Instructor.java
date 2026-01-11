@@ -1,10 +1,14 @@
 package com.muhd.student_app.entities;
 
 import lombok.*;
+
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -20,12 +24,15 @@ public class Instructor {
     @Id
     @GeneratedValue(strategy =GenerationType.AUTO)
     private Long id;
+
     private String department;
+    
     private String staffNumber;
 
-    @OneToOne
-    private AppUser userID;
+    @JoinColumn(name = "user_id", nullable = false)
+    private AppUser user;
 
-    @OneToMany
-    private Course course;
+    // One instructor can teach many courses
+    @OneToMany(mappedBy = "instructor")
+    private Set<Course> courses;
 }

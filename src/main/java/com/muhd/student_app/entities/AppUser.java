@@ -1,5 +1,6 @@
 package com.muhd.student_app.entities;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -29,8 +30,8 @@ public class AppUser {
     
     private String username;
     private String email;
-    private String Role;
+    private String role;
 
-    private Date createdAt;
-    private Date updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

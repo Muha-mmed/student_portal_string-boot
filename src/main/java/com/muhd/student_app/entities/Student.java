@@ -1,11 +1,15 @@
 package com.muhd.student_app.entities;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -37,7 +41,7 @@ public class Student {
     @OneToOne
     private AppUser userID;
     
-    @NotBlank
-    @ManyToMany
-    private Course courses;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private Set<Enrollment> enrollments;
+
 }
